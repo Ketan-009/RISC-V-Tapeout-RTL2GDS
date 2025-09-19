@@ -87,6 +87,7 @@ The system appears to be well-configured for RISC-V development and tapeout proc
 - ✅ **Modern OS**: Ubuntu 22.04.5 LTS with recent kernel
 - ✅ **x86_64 Architecture**: Compatible with most EDA tools
 
+
 # 🔧 Yosys Installation Guide
 
 ---
@@ -103,47 +104,138 @@ The system appears to be well-configured for RISC-V development and tapeout proc
 
 ---
 
-## System Update
-It's recommended to update your system before installing new software. Run the following commands:
+
+## 🔄 System Update
+
+Start by updating your system packages to ensure compatibility:
 
 ```bash
+# Update package lists
 sudo apt-get update
-sudo apt-get install make  # If make is not installed
+
+# Install make if not already present
+sudo apt-get install make
 ```
 
-## Build Dependencies
-Yosys requires several dependencies for a successful build. Install the necessary packages using the following command:
-
-```bash
-sudo apt install git build-essential clang bison flex libreadline-dev \
-libgmp-dev libmpfr-dev libmpc-dev
-```
-
-## Clone/Build Instructions
-Follow these steps to clone and build Yosys:
-
-1. Clone the Yosys repository:
-
-    ```bash
-    git clone https://github.com/YosysHQ/yosys.git
-    cd yosys
-    ```
-
-2. Build Yosys:
-
-    ```bash
-    make
-    ```
-
-3. Optionally, install Yosys to your system:
-
-    ```bash
-    sudo make install
-    ```
-
-Congratulations! You have successfully installed Yosys on your system.
+> **💡 Tip**: It's always good practice to update your system before installing new software packages.
 
 ---
 
+## 📦 Build Dependencies
+
+Install all required dependencies for building Yosys. The dependency list includes `libfl-dev` and optionally `lld` for better performance:
+
+```bash
+sudo apt-get install build-essential clang lld bison flex libfl-dev \
+    libreadline-dev gawk tcl-dev libffi-dev git \
+    graphviz xdot pkg-config python3 libboost-system-dev \
+    libboost-python-dev libboost-filesystem-dev zlib1g-dev
+```
+
+### 📋 Dependency Breakdown:
+
+| Package | Purpose |
+|---------|---------|
+| `build-essential` | 🔨 Core build tools (gcc, g++, make) |
+| `clang` | 🛠️ Modern C/C++ compiler |
+| `lld` | ⚡ LLVM linker for better performance |
+| `bison` & `flex` | 📝 Parser and lexer generators |
+| `libfl-dev` | 🔗 Flex library development files |
+| `libreadline-dev` | 📖 Command line editing capabilities |
+| `gawk` | 🔧 GNU AWK text processing |
+| `tcl-dev` | 🐍 Tool Command Language support |
+| `libffi-dev` | 🔌 Foreign Function Interface |
+| `git` | 📂 Version control system |
+| `graphviz` & `xdot` | 📊 Graph visualization tools |
+| `python3` | 🐍 Python interpreter |
+| `libboost-*` | 🚀 Boost C++ libraries |
+| `zlib1g-dev` | 📦 Compression library |
+
+---
+
+## 🚀 Clone and Build Yosys
+
+### Step 1: Clone Repository
+
+Clone the Yosys repository with all submodules:
+
+```bash
+# Clone with submodules (IMPORTANT!)
+git clone --recurse-submodules https://github.com/YosysHQ/yosys.git
+```
+
+<details>
+<summary>🔄 Alternative Method (if you forgot --recurse-submodules)</summary>
+
+```bash
+git clone https://github.com/YosysHQ/yosys.git
+cd yosys
+git submodule update --init --recursive
+```
+
+</details>
+
+### Step 2: Build Configuration
+
+Navigate to the yosys directory and configure the build:
+
+```bash
+cd yosys
+make config-gcc
+```
+
+### Step 3: Compile Yosys
+
+Build the project (this may take 5-15 minutes depending on your system):
+
+```bash
+# Standard build
+make
+
+# Or for faster builds on multi-core systems:
+make -j$(nproc)
+```
+
+### Step 4: Install System-wide
+
+Install Yosys to make it available system-wide:
+
+```bash
+sudo make install
+```
+
+---
+
+## ✅ Verification
+
+### Quick Version Check
+
+Verify the installation was successful:
+
+```bash
+yosys --version
+```
+
+**Expected Output:**
+```
+Yosys 0.xx (git sha1 xxxxxxxx, gcc x.x.x -Os)
+```
+
+### Interactive Test
+
+Test the interactive shell:
+
+```bash
+# Start Yosys interactive mode
+yosys
+
+# In the Yosys shell, try:
+help
+# List available commands
+
+# Exit the shell
+exit
+```
+
 *Generated on: 2025-09-19*
-*System Owner: Ketan-009*
+*System Owner: Ketan*
