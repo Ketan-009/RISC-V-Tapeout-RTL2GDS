@@ -87,7 +87,21 @@ The system appears to be well-configured for RISC-V development and tapeout proc
 - ✅ **Modern OS**: Ubuntu 22.04.5 LTS with recent kernel
 - ✅ **x86_64 Architecture**: Compatible with most EDA tools
 
-## Yosys Installation Guide
+# 🔧 Yosys Installation Guide
+
+---
+
+## 🎯 Overview
+
+**Yosys** is a framework for **RTL synthesis** and verification, essential for digital design workflows. This guide provides step-by-step instructions for installing Yosys on Ubuntu/Debian systems as part of your **RISC-V Tapeout RTL2GDS** journey.
+
+### Key Features:
+- 🔄 **RTL Synthesis**: Convert Verilog to gate-level netlists
+- 🎯 **Technology Mapping**: Support for various FPGA and ASIC libraries
+- 🔍 **Formal Verification**: Built-in verification capabilities
+- 🧩 **Extensible**: Plugin architecture for custom flows
+
+---
 
 ## System Update
 It's recommended to update your system before installing new software. Run the following commands:
