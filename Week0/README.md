@@ -349,6 +349,263 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ## 📷 Snapshot 
 <img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/a933469b-2946-4855-992c-afb71c6819d1" />
 
+# ⚡ Ngspice Installation Guide
+
+## 🎯 Overview
+
+**Ngspice** is a mixed-level/mixed-signal electronic circuit simulator based on Berkeley SPICE 3f5. Essential for analog and mixed-signal verification in your RISC-V design flow!
+
+### 🌟 Key Features:
+- 🔬 **SPICE Simulation**: Industry-standard circuit simulation
+- ⚡ **Mixed-Signal**: Analog, digital, and mixed-signal support
+- 📊 **Advanced Analysis**: AC, DC, transient, noise analysis
+- 🔧 **Extensible**: Comprehensive model library
+- 🎯 **RISC-V Ready**: Perfect for I/O and analog verification
+- 🆓 **Open Source**: Free and actively maintained
+
+## 📦 Installation Steps
+
+### Step 1: Download Ngspice Source
+
+Download the latest stable release (v45.2):
+
+```bash
+wget -O ngspice-45.2.tar.gz https://sourceforge.net/projects/ngspice/files/ng-spice-rework/45.2/ngspice-45.2.tar.gz/download
+```
+
+> **📝 Note**: The download URL redirects from SourceForge, this is normal behavior.
+
+### Step 2: Extract the Archive
+
+```bash
+tar -zxvf ngspice-45.2.tar.gz
+```
+**Output:**
+```
+ngspice-45.2/
+ngspice-45.2/.gitignore
+ngspice-45.2/aclocal.m4
+ngspice-45.2/ANALYSES
+ngspice-45.2/ar-lib
+ngspice-45.2/AUTHORS
+ngspice-45.2/autogen.sh
+ngspice-45.2/BUGS
+ngspice-45.2/ChangeLog
+...
+```
+
+### Step 3: Navigate and Create Build Directory
+
+```bash
+cd ngspice-45.2
+mkdir release
+cd release
+```
+
+> **💡 Why separate build directory?** This keeps source clean and allows multiple build configurations.
+
+### Step 4: Configure the Build
+
+Configure with recommended options for RISC-V development:
+
+```bash
+../configure --with-x --with-readline=yes --disable-debug
+```
+
+### 🔧 Configuration Options Explained:
+
+| Option | Purpose |
+|--------|---------|
+| `--with-x` | 🖥️ Enable X11 GUI support for plotting |
+| `--with-readline=yes` | 📖 Enable command line editing |
+| `--disable-debug` | ⚡ Optimize for performance |
+
+### Step 5: Compile Ngspice
+
+```bash
+make
+```
+
+**Build Progress Indicators:**
+- ⏳ **Compilation time**: 5-15 minutes depending on system
+- 🔄 **Progress**: Watch for successful compilation messages
+- ✅ **Success**: No fatal errors at the end
+
+### Step 6: Install System-wide
+
+```bash
+sudo make install
+```
+
+### 🚨 **Real Error Encountered**
+
+**Error Message:**
+```bash
+ketan@ketan:~/ngspice-45.2/release$ make
+CDPATH="${ZSH_VERSION+.}:" && cd .. && /bin/bash '/home/ketan/ngspice-45.2/missing' aclocal-1.16 -I m4
+/home/ketan/ngspice-45.2/missing: line 81: aclocal-1.16: command not found
+WARNING: 'aclocal-1.16' is missing on your system.
+         You should only need it if you modified 'acinclude.m4' or
+         'configure.ac' or m4 files included by 'configure.ac'.
+         The 'aclocal' program is part of the GNU Automake package:
+         <https://www.gnu.org/software/automake>
+make: *** [Makefile:460: ../aclocal.m4] Error 127
+```
+## 📷 Snapshot
+<img width="1063" height="255" alt="Screenshot 2025-09-20 020639" src="https://github.com/user-attachments/assets/214d7655-9a3a-4f5e-acf5-5a9d889dd082" />
+
+### 🔧 **Solution That Worked**
+
+**Root Cause:** Missing `automake` package which provides `aclocal-1.16`
+
+**Step-by-Step Fix:**
+
+```bash
+# Step 1: Install missing automake package
+sudo apt-get update
+sudo apt-get install automake
+
+# Also ensure you have the complete autotools suite
+sudo apt-get install autoconf libtool
+
+# Step 2: Clean the broken build state
+cd ~/ngspice-45.2
+rm -rf release
+rm -f config.cache config.log config.status
+rm -f Makefile
+
+# Step 3: Fresh build setup
+mkdir release
+cd release
+
+# Step 4: Reconfigure and build
+../configure --with-x --with-readline=yes --disable-debug
+make
+
+# Step 5: Install if successful
+sudo make install
+```
+
+## ✅ Verification
+
+### Quick Version Check
+
+Verify installation success:
+
+```bash
+ngspice --version
+```
+
+**Output:**
+```
+******
+** ngspice-45.2 : Circuit level simulation program
+** Compiled with KLU Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2025, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Fri Sep 19 20:42:13 UTC 2025
+******
+```
+
+## 📷 Snapshot
+<img width="1073" height="576" alt="image" src="https://github.com/user-attachments/assets/ef680304-3a8c-4b03-8ba9-44f06599c1a6" />
+
+# 🎩 Magic VLSI Installation Guide
+
+## 🎯 Overview
+
+**Magic VLSI** is a venerable VLSI layout tool, written in the 1980s at Berkeley by John Ousterhout. Now maintained by Tim Edwards, it remains one of the most capable layout tools available for academic and open-source use.
+
+### 🌟 Key Features:
+- 🎨 **Interactive Layout**: Real-time design rule checking
+- 🔍 **Hierarchical Design**: Support for complex chip layouts
+- ⚡ **Fast DRC**: Built-in design rule checking
+- 🔬 **Parasitic Extraction**: RC and capacitance extraction
+- 🎯 **RISC-V Ready**: Perfect for custom RISC-V layouts
+- 🆓 **Open Source**: Free with extensive community support
+
+## 📦 Installation Steps
+
+### Step 1: Install All Dependencies
+
+Install the complete dependency chain:
+
+```bash
+sudo apt-get update
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+```
+
+> **💡 Pro Tip**: You can combine these into a single command for efficiency
+
+```bash
+sudo apt-get install m4 tcsh csh libx11-dev tcl-dev tk-dev \
+    libcairo2-dev mesa-common-dev libglu1-mesa-dev libncurses-dev
+```
+
+### Step 2: Clone Magic Repository
+
+Clone from the official repository:
+
+```bash
+git clone https://github.com/RTimothyEdwards/magic
+```
+
+### Step 3: Navigate to Magic Directory
+
+```bash
+cd magic
+```
+
+### Step 4: Configure the Build
+
+Run the configure script to detect system capabilities:
+
+```bash
+./configure
+```
+
+### Step 5: Compile Magic
+
+```bash
+make
+```
+
+### Step 6: Install System-wide
+
+```bash
+sudo make install
+```
+
+## ✅ Verification
+
+### Quick Version Check
+
+Verify Magic installed correctly:
+
+```bash
+magic -version
+```
+
+**Output:**
+```
+8.3.552
+```
+
+## 📷 Snapshot
+<img width="1919" height="1023" alt="image" src="https://github.com/user-attachments/assets/96bc939e-a7b9-4b03-ac77-e93f3a4ef75f" />
+
+
+
 
 
 *Generated on: 2025-09-19*
