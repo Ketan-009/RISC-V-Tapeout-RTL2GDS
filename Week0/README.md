@@ -216,9 +216,9 @@ Verify the installation was successful:
 yosys --version
 ```
 
-**Expected Output:**
+**Output:**
 ```
-Yosys 0.xx (git sha1 xxxxxxxx, gcc x.x.x -Os)
+Yosys 0.57+148 (git sha1 259bd6fb3, g++ 11.4.0-1ubuntu1~22.04.2 -fPIC -O3)
 ```
 
 ### Interactive Test
@@ -228,14 +228,128 @@ Test the interactive shell:
 ```bash
 # Start Yosys interactive mode
 yosys
-
-# In the Yosys shell, try:
-help
-# List available commands
-
-# Exit the shell
-exit
 ```
+## 📷 Snapshot
+<img width="1214" height="600" alt="image" src="https://github.com/user-attachments/assets/fbefe4aa-d666-4638-a776-bdf743bf0bdb" />
+
+# ⚡ Iverilog Installation Guide
+
+## 🎯 Overview
+
+**Icarus Verilog (iverilog)** is a free and open-source Verilog simulation and synthesis tool. It's perfect for:
+
+### 🌟 Key Features:
+- 🔄 **IEEE 1364 Compliant**: Full Verilog-1995, Verilog-2001, and partial Verilog-2005 support
+- ⚡ **Fast Simulation**: Compiled simulation for better performance
+- 🎯 **Cross-Platform**: Works on Linux, macOS, and Windows
+- 🆓 **Open Source**: Completely free with GPL license
+- 🔧 **Easy Integration**: Works seamlessly with other EDA tools
+
+## 📦 Installation Steps
+
+### Step 1: Update Package Repository
+
+Ensure your package lists are up-to-date:
+
+```bash
+sudo apt-get update
+```
+
+> **📝 Note**: This step fetches the latest package information from Ubuntu repositories.
+
+### Step 2: Install Iverilog
+
+Install Icarus Verilog from the official Ubuntu repository:
+
+```bash
+sudo apt-get install iverilog
+```
+
+## 📷 Snapshot
+<img width="1612" height="862" alt="image" src="https://github.com/user-attachments/assets/2d58e937-1ff4-44fb-86fc-df61dfad743e" />
+
+## ✅ Verification
+
+### Quick Version Check
+
+Verify the installation was successful:
+
+```bash
+iverilog -V
+```
+
+**Output:**
+```
+Icarus Verilog version 11.0 (stable) ()
+
+Copyright 1998-2020 Stephen Williams
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.....
+```
+
+## 📷 Snapshot
+
+<img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/fb4df76b-b729-4a45-80bd-d158fc0eb3f5" />
+
+# 🌊 GTKWave Installation Guide
+
+## 🎯 Overview
+
+**GTKWave** is a fully featured waveform viewer for digital simulation data. Essential for debugging and analyzing your RISC-V designs!
+
+### 🌟 Key Features:
+- 📊 **VCD File Support**: Industry-standard Value Change Dump format
+- 🔍 **Signal Analysis**: Zoom, pan, and measure timing relationships
+- 🎨 **Customizable Views**: Color coding and signal grouping
+- ⚡ **Fast Performance**: Handles large waveform files efficiently
+- 🔧 **Search & Filter**: Find signals quickly in complex designs
+- 📈 **Multi-format Support**: VCD, LXT, FST, and more
+
+## 📦 Installation Steps
+
+### Step 1: Update Package Repository
+
+Refresh your package database to get the latest versions:
+
+```bash
+sudo apt-get update
+```
+
+> **📝 Note**: This ensures you get the most recent version available in the repositories.
+
+### Step 2: Install GTKWave
+
+Install GTKWave and its dependencies:
+
+```bash
+sudo apt install gtkwave
+```
+
+## ✅ Verification
+
+### Quick Version Check
+
+Verify GTKWave installed correctly:
+
+```bash
+gtkwave --version
+```
+
+**Output:**
+```
+GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
+
+## 📷 Snapshot 
+<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/a933469b-2946-4855-992c-afb71c6819d1" />
+
+
 
 *Generated on: 2025-09-19*
 *System Owner: Ketan*
