@@ -87,13 +87,47 @@ The system appears to be well-configured for RISC-V development and tapeout proc
 - ✅ **Modern OS**: Ubuntu 22.04.5 LTS with recent kernel
 - ✅ **x86_64 Architecture**: Compatible with most EDA tools
 
-## 🚀 Next Steps
+## Yosys Installation Guide
 
-1. Install required EDA tools and dependencies
-2. Set up development environment
-3. Configure PATH variables
-4. Verify tool installations
-5. Begin RISC-V RTL development
+## System Update
+It's recommended to update your system before installing new software. Run the following commands:
+
+```bash
+sudo apt-get update
+sudo apt-get install make  # If make is not installed
+```
+
+## Build Dependencies
+Yosys requires several dependencies for a successful build. Install the necessary packages using the following command:
+
+```bash
+sudo apt install git build-essential clang bison flex libreadline-dev \
+libgmp-dev libmpfr-dev libmpc-dev
+```
+
+## Clone/Build Instructions
+Follow these steps to clone and build Yosys:
+
+1. Clone the Yosys repository:
+
+    ```bash
+    git clone https://github.com/YosysHQ/yosys.git
+    cd yosys
+    ```
+
+2. Build Yosys:
+
+    ```bash
+    make
+    ```
+
+3. Optionally, install Yosys to your system:
+
+    ```bash
+    sudo make install
+    ```
+
+Congratulations! You have successfully installed Yosys on your system.
 
 ---
 
