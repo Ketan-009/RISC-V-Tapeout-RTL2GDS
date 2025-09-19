@@ -62,6 +62,8 @@ echo "   Root partition: $(df -h / | awk 'NR==2{print $2 " total, " $4 " availab
    Root partition: 98G total, 81G available, 13% used
 ```
 
+<img width="1919" height="926" alt="image" src="https://github.com/user-attachments/assets/a7183b9b-798d-4202-877e-e21c3dd53ad8" />
+
 ## 💻 System Summary
 
 | Component | Specification |
