@@ -604,9 +604,141 @@ magic -version
 ## 📷 Snapshot
 <img width="1919" height="1023" alt="image" src="https://github.com/user-attachments/assets/96bc939e-a7b9-4b03-ac77-e93f3a4ef75f" />
 
+# 🚀 OpenLane Installation Guide
+
+## 🎯 Overview
+
+**OpenLane** is an automated RTL to GDSII flow based on several open-source tools including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, KLayout and more. Perfect for your RISC-V Tapeout journey!
+
+### 🌟 Key Features:
+- 🔄 **Complete Flow**: RTL synthesis to GDSII generation
+- 🤖 **Automated**: Push-button ASIC implementation
+- 🐳 **Containerized**: Easy deployment with Docker
+- 🎯 **SkyWater Ready**: Pre-configured for SkyWater 130nm
+- 🆓 **Open Source**: Completely free and transparent
+- 📊 **Comprehensive**: DRC, LVS, timing analysis included
+
+### Dependency Installation:
+
+```bash
+# Update system packages
+sudo apt-get update
+sudo apt-get upgrade
+
+# Install essential build tools
+sudo apt install -y build-essential python3 python3-venv python3-pip make git
+
+# Install Docker prerequisites
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
+
+---
 
 
+## 🐳 Docker Setup
 
+### Step 1: Add Docker Repository
+
+```bash
+# Add Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Add Docker repository
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+### Step 2: Install Docker
+
+```bash
+# Update package index
+sudo apt update
+
+# Install Docker Engine
+sudo apt install docker-ce docker-ce-cli containerd.io
+```
+
+### Step 3: Test Docker Installation
+
+```bash
+# Test Docker with hello-world
+sudo docker run hello-world
+```
+
+### Step 4: Configure Docker for Non-root Access
+
+```bash
+# Add docker group (may already exist)
+sudo groupadd docker
+
+# Add user to docker group
+sudo usermod -aG docker $USER
+
+# Reboot to apply group changes
+sudo reboot
+```
+
+### Step 5: Verify Docker Access (After Reboot)
+
+```bash
+# Test Docker without sudo
+docker run hello-world
+```
+
+---
+
+## 📦 OpenLane Installation
+
+### Step 1: Verify Dependencies
+
+```bash
+# Check all required tools
+git --version
+docker --version
+python3 --version
+python3 -m pip --version
+make --version
+python3 -m venv -h
+```
+
+**Outputs:**
+```
+git version 2.34.1
+Docker version 28.4.0, build d8eb465
+Python 3.10.12
+pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.10)
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+```
+
+### Step 2: Clone OpenLane Repository
+
+```bash
+# Navigate to home directory
+cd $HOME
+
+# Clone OpenLane
+git clone https://github.com/The-OpenROAD-Project/OpenLane
+```
+
+### Step 3: Navigate to OpenLane Directory
+
+```bash
+cd OpenLane
+```
+
+### Step 4: Build OpenLane Environment
+
+```bash
+# Build OpenLane (downloads PDKs and tools)
+make
+```
+
+### Step 5: Run Test Suite
+
+```bash
+# Run OpenLane test to verify installation
+make test
+```
 
 *Generated on: 2025-09-19*
 *System Owner: Ketan*
