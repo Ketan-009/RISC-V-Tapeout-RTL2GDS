@@ -720,6 +720,17 @@ cd $HOME
 git clone https://github.com/The-OpenROAD-Project/OpenLane
 ```
 
+**Output:**
+```
+Cloning into 'OpenLane'...
+remote: Enumerating objects: 18832, done.
+remote: Counting objects: 100% (310/310), done.
+remote: Compressing objects: 100% (205/205), done.
+remote: Total 18832 (delta 218), reused 109 (delta 105), pack-reused 18522 (from 3)
+Receiving objects: 100% (18832/18832), 856.04 MiB | 461.00 KiB/s, done.
+Resolving deltas: 100% (13546/13546), done.
+```
+
 ### Step 3: Navigate to OpenLane Directory
 
 ```bash
