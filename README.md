@@ -35,7 +35,7 @@ Contributing to India's semiconductor self-reliance through hands-on chip design
 📦 RISC-V-Tapeout-RTL2GDS
 ├── 📂 week0/
 │   └── 📂 assets/
-│       └── 📄 README.md
+│   └── 📄 README.md
 ├── 📂 week1/
 ├── 📂 week2/
 └── ... (20 weeks total)
