@@ -137,10 +137,10 @@ The system appears to be well-configured for RISC-V development and tapeout proc
 **Yosys** is a framework for **RTL synthesis** and verification, essential for digital design workflows. This guide provides step-by-step instructions for installing Yosys on Ubuntu/Debian systems.
 
 ### Key Features:
-- 🔄 **RTL Synthesis**: Convert Verilog to gate-level netlists
-- 🎯 **Technology Mapping**: Support for various FPGA and ASIC libraries
-- 🔍 **Formal Verification**: Built-in verification capabilities
-- 🧩 **Extensible**: Plugin architecture for custom flows
+-  **RTL Synthesis**: Convert Verilog to gate-level netlists
+-  **Technology Mapping**: Support for various FPGA and ASIC libraries
+-  **Formal Verification**: Built-in verification capabilities
+-  **Extensible**: Plugin architecture for custom flows
 
 ## 🔄 System Update
 
@@ -171,20 +171,20 @@ sudo apt-get install build-essential clang lld bison flex libfl-dev \
 
 | Package | Purpose |
 |---------|---------|
-| `build-essential` | 🔨 Core build tools (gcc, g++, make) |
-| `clang` | 🛠️ Modern C/C++ compiler |
-| `lld` | ⚡ LLVM linker for better performance |
-| `bison` & `flex` | 📝 Parser and lexer generators |
-| `libfl-dev` | 🔗 Flex library development files |
-| `libreadline-dev` | 📖 Command line editing capabilities |
-| `gawk` | 🔧 GNU AWK text processing |
-| `tcl-dev` | 🐍 Tool Command Language support |
-| `libffi-dev` | 🔌 Foreign Function Interface |
-| `git` | 📂 Version control system |
-| `graphviz` & `xdot` | 📊 Graph visualization tools |
-| `python3` | 🐍 Python interpreter |
-| `libboost-*` | 🚀 Boost C++ libraries |
-| `zlib1g-dev` | 📦 Compression library |
+| `build-essential` |  Core build tools (gcc, g++, make) |
+| `clang` |  Modern C/C++ compiler |
+| `lld` |  LLVM linker for better performance |
+| `bison` & `flex` |  Parser and lexer generators |
+| `libfl-dev` |  Flex library development files |
+| `libreadline-dev` |  Command line editing capabilities |
+| `gawk` |  GNU AWK text processing |
+| `tcl-dev` |  Tool Command Language support |
+| `libffi-dev` |  Foreign Function Interface |
+| `git` |  Version control system |
+| `graphviz` & `xdot` |  Graph visualization tools |
+| `python3` |  Python interpreter |
+| `libboost-*` |  Boost C++ libraries |
+| `zlib1g-dev` |  Compression library |
 
 ## 🚀 Clone and Build Yosys
 
@@ -278,11 +278,11 @@ yosys
 **Icarus Verilog (iverilog)** is a free and open-source Verilog simulation and synthesis tool. It's perfect for:
 
 ### 🌟 Key Features:
-- 🔄 **IEEE 1364 Compliant**: Full Verilog-1995, Verilog-2001, and partial Verilog-2005 support
-- ⚡ **Fast Simulation**: Compiled simulation for better performance
-- 🎯 **Cross-Platform**: Works on Linux, macOS, and Windows
-- 🆓 **Open Source**: Completely free with GPL license
-- 🔧 **Easy Integration**: Works seamlessly with other EDA tools
+-  **IEEE 1364 Compliant**: Full Verilog-1995, Verilog-2001, and partial Verilog-2005 support
+-  **Fast Simulation**: Compiled simulation for better performance
+-  **Cross-Platform**: Works on Linux, macOS, and Windows
+-  **Open Source**: Completely free with GPL license
+-  **Easy Integration**: Works seamlessly with other EDA tools
 
 ## 📦 Installation Steps
 
@@ -346,12 +346,12 @@ Copyright 1998-2020 Stephen Williams
 **GTKWave** is a fully featured waveform viewer for digital simulation data. Essential for debugging and analyzing your RISC-V designs!
 
 ### 🌟 Key Features:
-- 📊 **VCD File Support**: Industry-standard Value Change Dump format
-- 🔍 **Signal Analysis**: Zoom, pan, and measure timing relationships
-- 🎨 **Customizable Views**: Color coding and signal grouping
-- ⚡ **Fast Performance**: Handles large waveform files efficiently
-- 🔧 **Search & Filter**: Find signals quickly in complex designs
-- 📈 **Multi-format Support**: VCD, LXT, FST, and more
+-  **VCD File Support**: Industry-standard Value Change Dump format
+-  **Signal Analysis**: Zoom, pan, and measure timing relationships
+-  **Customizable Views**: Color coding and signal grouping
+-  **Fast Performance**: Handles large waveform files efficiently
+-  **Search & Filter**: Find signals quickly in complex designs
+-  **Multi-format Support**: VCD, LXT, FST, and more
 
 ## 📦 Installation Steps
 
@@ -408,12 +408,12 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 **Ngspice** is a mixed-level/mixed-signal electronic circuit simulator based on Berkeley SPICE 3f5. Essential for analog and mixed-signal verification in your RISC-V design flow!
 
 ### 🌟 Key Features:
-- 🔬 **SPICE Simulation**: Industry-standard circuit simulation
-- ⚡ **Mixed-Signal**: Analog, digital, and mixed-signal support
-- 📊 **Advanced Analysis**: AC, DC, transient, noise analysis
-- 🔧 **Extensible**: Comprehensive model library
-- 🎯 **RISC-V Ready**: Perfect for I/O and analog verification
-- 🆓 **Open Source**: Free and actively maintained
+-  **SPICE Simulation**: Industry-standard circuit simulation
+-  **Mixed-Signal**: Analog, digital, and mixed-signal support
+-  **Advanced Analysis**: AC, DC, transient, noise analysis
+-  **Extensible**: Comprehensive model library
+-  **RISC-V Ready**: Perfect for I/O and analog verification
+-  **Open Source**: Free and actively maintained
 
 ## 📦 Installation Steps
 
@@ -469,9 +469,9 @@ Configure with recommended options for RISC-V development:
 
 | Option | Purpose |
 |--------|---------|
-| `--with-x` | 🖥️ Enable X11 GUI support for plotting |
-| `--with-readline=yes` | 📖 Enable command line editing |
-| `--disable-debug` | ⚡ Optimize for performance |
+| `--with-x` |  Enable X11 GUI support for plotting |
+| `--with-readline=yes` |  Enable command line editing |
+| `--disable-debug` |  Optimize for performance |
 
 ### Step 5: Compile Ngspice
 
@@ -480,9 +480,9 @@ make
 ```
 
 **Build Progress Indicators:**
-- ⏳ **Compilation time**: 5-15 minutes depending on system
-- 🔄 **Progress**: Watch for successful compilation messages
-- ✅ **Success**: No fatal errors at the end
+-  **Compilation time**: 5-15 minutes depending on system
+-  **Progress**: Watch for successful compilation messages
+-  **Success**: No fatal errors at the end
 
 ### Step 6: Install System-wide
 
@@ -581,12 +581,12 @@ ngspice --version
 **Magic VLSI** is a venerable VLSI layout tool, written in the 1980s at Berkeley by John Ousterhout. Now maintained by Tim Edwards, it remains one of the most capable layout tools available for academic and research purposes.
 
 ### 🌟 Key Features:
-- 🎨 **Interactive Layout**: Real-time design rule checking
-- 🔍 **Hierarchical Design**: Support for complex chip layouts
-- ⚡ **Fast DRC**: Built-in design rule checking
-- 🔬 **Parasitic Extraction**: RC and capacitance extraction
-- 🎯 **RISC-V Ready**: Perfect for custom RISC-V layouts
-- 🆓 **Open Source**: Free with extensive community support
+-  **Interactive Layout**: Real-time design rule checking
+-  **Hierarchical Design**: Support for complex chip layouts
+-  **Fast DRC**: Built-in design rule checking
+-  **Parasitic Extraction**: RC and capacitance extraction
+-  **RISC-V Ready**: Perfect for custom RISC-V layouts
+-  **Open Source**: Free with extensive community support
 
 ## 📦 Installation Steps
 
@@ -679,12 +679,12 @@ magic -version
 **OpenLane** is an automated RTL to GDSII flow based on several open-source tools including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, KLayout and more. Perfect for your RISC-V Tapeout journey!
 
 ### 🌟 Key Features:
-- 🔄 **Complete Flow**: RTL synthesis to GDSII generation
-- 🤖 **Automated**: Push-button ASIC implementation
-- 🐳 **Containerized**: Easy deployment with Docker
-- 🎯 **SkyWater Ready**: Pre-configured for SkyWater 130nm
-- 🆓 **Open Source**: Completely free and transparent
-- 📊 **Comprehensive**: DRC, LVS, timing analysis included
+-  **Complete Flow**: RTL synthesis to GDSII generation
+-  **Automated**: Push-button ASIC implementation
+-  **Containerized**: Easy deployment with Docker
+-  **SkyWater Ready**: Pre-configured for SkyWater 130nm
+-  **Open Source**: Completely free and transparent
+-  **Comprehensive**: DRC, LVS, timing analysis included
 
 ## 📦 Dependency Installation
 
@@ -878,14 +878,14 @@ openroad -gui &
 
 | Tool | Version | Status | Purpose |
 |------|---------|--------|---------|
-| **Yosys** | v0.57+148 | ✅ Installed | RTL Synthesis |
-| **Icarus Verilog** | v11.0 | ✅ Installed | Verilog Simulation |
-| **GTKWave** | v3.3.104 | ✅ Installed | Waveform Viewer |
-| **Ngspice** | v45.2 | ✅ Installed | SPICE Simulation |
-| **Magic VLSI** | v8.3.552 | ✅ Installed | Layout Editor |
-| **Docker** | v28.4.0 | ✅ Installed | Containerization |
-| **OpenLane** | Latest | ✅ Installed | RTL2GDSII Flow |
-| **SkyWater PDK** | 0fe599b2 | ✅ Installed | 130nm Technology |
+| **Yosys** | v0.57+148 |  Installed | RTL Synthesis |
+| **Icarus Verilog** | v11.0 |  Installed | Verilog Simulation |
+| **GTKWave** | v3.3.104 |  Installed | Waveform Viewer |
+| **Ngspice** | v45.2 |  Installed | SPICE Simulation |
+| **Magic VLSI** | v8.3.552 |  Installed | Layout Editor |
+| **Docker** | v28.4.0 |  Installed | Containerization |
+| **OpenLane** | Latest |  Installed | RTL2GDSII Flow |
+| **SkyWater PDK** | 0fe599b2 |  Installed | 130nm Technology |
 
 ### 🎯 Environment Capabilities
 
