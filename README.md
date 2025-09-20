@@ -29,17 +29,37 @@ Contributing to India's semiconductor self-reliance through hands-on chip design
 
 ---
 
-## 📁 Repository Structure
+### 📋 Week 0: Environment Setup ✅ **COMPLETED**
 
-```
-📦 RISC-V-Tapeout-RTL2GDS
-├── 📂 week0/
-│   └── 📂 assets/
-│   └── 📄 README.md
-├── 📂 week1/
-├── 📂 week2/
-└── ... (20 weeks total)
-```
+The complete EDA toolchain has been successfully installed and verified. This includes:
+
+- ✅ **System Requirements** - AMD Ryzen 7, 8GB RAM, Ubuntu 22.04.5 LTS
+- ✅ **Core EDA Tools** - Yosys, Icarus Verilog, GTKWave, Ngspice, Magic VLSI
+- ✅ **OpenLane RTL2GDSII Flow** - Complete automated tapeout environment
+- ✅ **SkyWater 130nm PDK** - Production-ready technology files
+
+> **📖 For Detailed Installation Instructions:**  
+> Navigate to **[Week0/README.md](./Week0/README.md)** and expand the `<details>` sections to view comprehensive installation guides for each tool.
+
+### 🎯 Navigation Guide for Week0 Documentation
+
+The Week0 README contains **collapsible sections** with detailed installation instructions:
+
+1. **🖥️ System Specifications** - Click to expand system details
+2. **🔧 Yosys Installation Guide** - Complete RTL synthesis setup
+3. **⚡ Iverilog Installation Guide** - Verilog simulation environment
+4. **🌊 GTKWave Installation Guide** - Waveform analysis tools
+5. **⚡ Ngspice Installation Guide** - SPICE circuit simulation
+6. **🎩 Magic VLSI Installation Guide** - Layout design tools
+7. **🚀 OpenLane Installation Guide** - Complete RTL2GDSII flow
+
+**📋 Each section includes:**
+- Step-by-step installation commands
+- Error troubleshooting with solutions
+- Verification procedures
+- Screenshots of successful installations
+
+---
 
 ---
 
@@ -59,6 +79,16 @@ Contributing to India's semiconductor self-reliance through hands-on chip design
 - [ ] Document learning journey for future engineers
 
 ---
+
+### 🙏 Acknowledgments
+
+**Special Thanks to:**
+- **[Kunal Ghosh](https://github.com/kunalg123) Sir** - Founder, VLSI System Design (VSD)
+- **VSD Team** - For providing world-class open-source EDA training and tools
+- **IIT Gandhinagar** - For pioneering India's semiconductor education initiative
+- **The Open-Source EDA Community** - For making advanced chip design accessible
+
+*This tapeout journey is made possible through the visionary leadership of Kunal Ghosh and the VSD team's commitment to democratizing chip design education in India.*
 
 <div align="center">
 
