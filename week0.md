@@ -4,6 +4,8 @@
 **User**: [Ketan-009](https://github.com/Ketan-009)
 
 ---
+<details>
+<summary>✅ Installation Completion Checklist</summary> 
 
 ## ✅ Installation Completion Checklist
 
@@ -29,6 +31,8 @@
 - [x] **Design Verification** - DRC, LVS, timing analysis ready
 
 ---
+
+</details>
 
 <details>
 <summary>🖥️ System Specifications</summary>
