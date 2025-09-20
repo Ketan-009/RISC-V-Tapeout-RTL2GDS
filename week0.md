@@ -1,5 +1,71 @@
 # Week 0: System Setup and Environment Configuration
 
+# Task 1
+
+<details>
+<summary> Chip Modeling and SoC Design Flow</summary> 
+       
+# Chip Modeling and SoC Design Flow – Summary
+
+
+## Overview
+Chip design moves through multiple abstraction levels, from high-level specifications to physical silicon implementation.
+
+---
+
+## Design Abstraction Levels
+1. **Specification (C Models)**  
+   - High-level algorithm & functionality description.  
+   - C testbenches validate correctness.  
+
+2. **RTL (Verilog Architecture)**  
+   - Register-transfer level representation.  
+   - Includes processors, peripherals, and functional blocks.  
+
+3. **Gate-Level & SoC Integration**  
+   - RTL → Logic gates → Netlist.  
+   - Integration of macros, analog IPs, GPIOs.  
+   - Ends with **floorplanning, P&R, GDSII**.  
+
+---
+
+## High-Level Synthesis (HLS)
+- Converts **C/C++ algorithms → RTL**.  
+- Handles scheduling, resource allocation, binding.  
+- Tools: Xilinx Vitis HLS, Synopsys Catapult.  
+
+---
+
+## Software vs Hardware Flow
+- **Software Compilation**: C → Assembly → Machine Code → Executable.  
+- **Hardware Synthesis**: C → RTL → Netlist → P&R → GDSII → Silicon chip.  
+
+---
+
+## Microprocessor vs Microcontroller
+- **Microprocessor**: External memory/peripherals, general-purpose, high performance.  
+- **Microcontroller**: On-chip memory/peripherals, low power, task-specific.  
+
+---
+
+## Fabrication Steps
+- Wafer preparation (slicing, polishing).  
+- Lithography, doping/ion implantation.  
+- Etching, deposition, diffusion.  
+- Metallization, packaging, testing.  
+
+---
+
+## SoC Integration & Challenges
+- Combines **CPU, GPU, DSP, memory, connectivity, power units**.  
+- Placement & routing optimize timing, power, and area.  
+- Enables complex, efficient chips for modern electronics. 
+---
+</details>
+
+
+# Task 2
+
 **Completion Status**: ✅ **COMPLETED**  
 **User**: [Ketan-009](https://github.com/Ketan-009)
 
