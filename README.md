@@ -39,7 +39,7 @@ The complete EDA toolchain has been successfully installed and verified. This in
 - ✅ **SkyWater 130nm PDK** - Production-ready technology files
 
 > **📖 For Detailed Installation Instructions:**  
-> Navigate to **[Week0/README.md](week0.md)** and expand the `<details>` sections to view comprehensive installation guides for each tool.
+> Navigate to **[week0.md](week0.md)** and expand the `<details>` sections to view comprehensive installation guides for each tool.
 
 ### 🎯 Navigation Guide for Week0 Documentation
 
