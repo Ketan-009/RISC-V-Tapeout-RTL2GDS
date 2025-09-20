@@ -115,15 +115,6 @@ echo "   Root partition: $(df -h / | awk 'NR==2{print $2 " total, " $4 " availab
 | **Available RAM** | 6.5 GiB |
 | **Storage** | 98GB total, 81GB available |
 
-##  System Readiness
-
-The system appears to be well-configured for RISC-V development and tapeout processes:
-
--  **Sufficient Processing Power**: 8-core AMD Ryzen 7 processor
--  **Adequate Memory**: 7.8GB RAM with 6.5GB available
--  **Ample Storage**: 81GB available storage space
--  **Modern OS**: Ubuntu 22.04.5 LTS with recent kernel
--  **x86_64 Architecture**: Compatible with most EDA tools
 
 </details>
 
