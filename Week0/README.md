@@ -750,6 +750,68 @@ make
 # Run OpenLane test to verify installation
 make test
 ```
+ Critical Fix: PDK Installation Error
+### 🚨 **Critical Fix: PDK Installation Error**
+
+**Error Message:**
+```bash
+./venv/bin/ciel ls-remotes | grep sky130
+Usage: ciel [OPTIONS] COMMAND [ARGS]...
+Try 'ciel --help' for help.
+
+Error: No such command 'ls-remotes'.
+```
+
+### 🔧 **Solution That Worked**
+
+**Root Cause:** `Missing argument VERSION` error occurs because the `volare enable` command needs the exact PDK commit hash from this metadata file
+
+**Step-by-Step Fix:**
+
+```bash
+# Step 1: Activate Python Virtual Environment
+cd ~/OpenLane
+source venv/bin/activate
+
+# Step 2: Install PDK with Specific Version Hash
+# With venv active, use ciel directly (not ./venv/bin/ciel)
+ciel enable --pdk-family=sky130 0fe599b2afb6708d281543108caf8310912f54af
+```
+
+### Again Run Test Suite
+
+```bash
+# Run OpenLane test to verify installation
+make test
+```
+
+**Outputs:**
+```
+...
+Basic test passed
+```
+
+## 📷 Snapshot
+<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/f5be9ac4-bf43-416f-8a26-512c548802f1" />
+<img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/af700c84-e605-4982-b8a7-3ae97fb268a6" />
+
+## ✅ Verification
+
+### OpenROAD GUI LAUNCH
+
+Verify OpenROAD GUI launcd:
+
+```bash
+make mount
+
+# Launch OpenROAD with GUI
+export DISPLAY=:0
+openroad -gui &
+```
+
+## 📷 Snapshot
+<img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/0d04c6cc-dd94-4c2a-a6e7-95bbc9322df2" />
+
 
 *Generated on: 2025-09-19*
 *System Owner: Ketan*
