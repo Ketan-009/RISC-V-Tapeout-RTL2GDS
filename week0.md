@@ -5,43 +5,43 @@
 
 ---
 <details>
-<summary>✅ Installation Completion Checklist</summary> 
+<summary> Installation Completion Checklist</summary> 
 
 ## ✅ Installation Completion Checklist
 
-### 🏆 Environment Setup Status
-- [x] **System Requirements Check** - 8-core AMD Ryzen 7, 7.8GB RAM, 81GB storage
-- [x] **Operating System** - Ubuntu 22.04.5 LTS verified
-- [x] **Core Dependencies** - Build tools and libraries installed
-- [x] **Yosys RTL Synthesis** - v0.57+148 installed and verified
-- [x] **Icarus Verilog Simulator** - v11.0 installed and verified
-- [x] **GTKWave Viewer** - v3.3.104 installed and verified
-- [x] **Ngspice Circuit Simulator** - v45.2 installed and verified
-- [x] **Magic VLSI Layout** - v8.3.552 installed and verified
-- [x] **Docker Environment** - Configured with user permissions
-- [x] **OpenLane RTL2GDSII** - Complete flow installed and tested
-- [x] **SkyWater 130nm PDK** - PDK installed with hash: 0fe599b2afb6708d281543108caf8310912f54af
+###  Environment Setup Status
+-  **System Requirements Check** - 8-core AMD Ryzen 7, 7.8GB RAM, 81GB storage
+-  **Operating System** - Ubuntu 22.04.5 LTS verified
+-  **Core Dependencies** - Build tools and libraries installed
+-  **Yosys RTL Synthesis** - v0.57+148 installed and verified
+-  **Icarus Verilog Simulator** - v11.0 installed and verified
+-  **GTKWave Viewer** - v3.3.104 installed and verified
+-  **Ngspice Circuit Simulator** - v45.2 installed and verified
+-  **Magic VLSI Layout** - v8.3.552 installed and verified
+-  **Docker Environment** - Configured with user permissions
+-  **OpenLane RTL2GDSII** - Complete flow installed and tested
+-  **SkyWater 130nm PDK** - PDK installed with hash: 0fe599b2afb6708d281543108caf8310912f54af
 
-### 🎯 Tools Ready for RISC-V Development
-- [x] **Complete RTL2GDSII Flow** - OpenLane operational
-- [x] **Simulation Environment** - Icarus Verilog + GTKWave
-- [x] **Synthesis Tools** - Yosys ready for RTL synthesis
-- [x] **Analog Simulation** - Ngspice for mixed-signal verification
-- [x] **Layout Tools** - Magic VLSI for custom layouts
-- [x] **Design Verification** - DRC, LVS, timing analysis ready
+###  Tools Ready for RISC-V Development
+-  **Complete RTL2GDSII Flow** - OpenLane operational
+-  **Simulation Environment** - Icarus Verilog + GTKWave
+-  **Synthesis Tools** - Yosys ready for RTL synthesis
+-  **Analog Simulation** - Ngspice for mixed-signal verification
+-  **Layout Tools** - Magic VLSI for custom layouts
+-  **Design Verification** - DRC, LVS, timing analysis ready
 
 ---
 
 </details>
 
 <details>
-<summary>🖥️ System Specifications</summary>
+<summary> System Specifications</summary>
 
-## 🖥️ System Specifications
+##  System Specifications
 
 This document contains the system setup and configuration details for the RISC-V Tapeout RTL2GDS journey.
 
-## 📋 System Check Report
+##  System Check Report
 
 Below is the comprehensive system check script and its output:
 
@@ -102,7 +102,7 @@ echo "   Root partition: $(df -h / | awk 'NR==2{print $2 " total, " $4 " availab
 ## Snapshot
 <img width="1919" height="926" alt="image" src="https://github.com/user-attachments/assets/a7183b9b-798d-4202-877e-e21c3dd53ad8" />
 
-## 💻 System Summary
+##  System Summary
 
 | Component | Specification |
 |-----------|---------------|
@@ -115,24 +115,24 @@ echo "   Root partition: $(df -h / | awk 'NR==2{print $2 " total, " $4 " availab
 | **Available RAM** | 6.5 GiB |
 | **Storage** | 98GB total, 81GB available |
 
-## ✅ System Readiness
+##  System Readiness
 
 The system appears to be well-configured for RISC-V development and tapeout processes:
 
-- ✅ **Sufficient Processing Power**: 8-core AMD Ryzen 7 processor
-- ✅ **Adequate Memory**: 7.8GB RAM with 6.5GB available
-- ✅ **Ample Storage**: 81GB available storage space
-- ✅ **Modern OS**: Ubuntu 22.04.5 LTS with recent kernel
-- ✅ **x86_64 Architecture**: Compatible with most EDA tools
+-  **Sufficient Processing Power**: 8-core AMD Ryzen 7 processor
+-  **Adequate Memory**: 7.8GB RAM with 6.5GB available
+-  **Ample Storage**: 81GB available storage space
+-  **Modern OS**: Ubuntu 22.04.5 LTS with recent kernel
+-  **x86_64 Architecture**: Compatible with most EDA tools
 
 </details>
 
 <details>
-<summary>🔧 Yosys Installation Guide</summary>
+<summary> Yosys Installation Guide</summary>
 
 # 🔧 Yosys Installation Guide
 
-## 🎯 Overview
+##  Overview
 
 **Yosys** is a framework for **RTL synthesis** and verification, essential for digital design workflows. This guide provides step-by-step instructions for installing Yosys on Ubuntu/Debian systems.
 
@@ -142,7 +142,7 @@ The system appears to be well-configured for RISC-V development and tapeout proc
 -  **Formal Verification**: Built-in verification capabilities
 -  **Extensible**: Plugin architecture for custom flows
 
-## 🔄 System Update
+##  System Update
 
 Start by updating your system packages to ensure compatibility:
 
@@ -154,9 +154,9 @@ sudo apt-get update
 sudo apt-get install make
 ```
 
-> **💡 Tip**: It's always good practice to update your system before installing new software packages.
+> ** Tip**: It's always good practice to update your system before installing new software packages.
 
-## 📦 Build Dependencies
+##  Build Dependencies
 
 Install all required dependencies for building Yosys. The dependency list includes `libfl-dev` and optionally `lld` for better performance:
 
@@ -167,7 +167,7 @@ sudo apt-get install build-essential clang lld bison flex libfl-dev \
     libboost-python-dev libboost-filesystem-dev zlib1g-dev
 ```
 
-### 📋 Dependency Breakdown:
+###  Dependency Breakdown:
 
 | Package | Purpose |
 |---------|---------|
@@ -186,7 +186,7 @@ sudo apt-get install build-essential clang lld bison flex libfl-dev \
 | `libboost-*` |  Boost C++ libraries |
 | `zlib1g-dev` |  Compression library |
 
-## 🚀 Clone and Build Yosys
+##  Clone and Build Yosys
 
 ### Step 1: Clone Repository
 
@@ -198,7 +198,7 @@ git clone --recurse-submodules https://github.com/YosysHQ/yosys.git
 ```
 
 <details>
-<summary>🔄 Alternative Method (if you forgot --recurse-submodules)</summary>
+<summary> Alternative Method (if you forgot --recurse-submodules)</summary>
 
 ```bash
 git clone https://github.com/YosysHQ/yosys.git
@@ -237,7 +237,7 @@ Install Yosys to make it available system-wide:
 sudo make install
 ```
 
-## ✅ Verification
+##  Verification
 
 ### Quick Version Check
 
@@ -261,7 +261,7 @@ Test the interactive shell:
 yosys
 ```
 
-## 📷 Snapshot
+##  Snapshot
 <img width="1214" height="600" alt="image" src="https://github.com/user-attachments/assets/fbefe4aa-d666-4638-a776-bdf743bf0bdb" />
 
 **Status**: ✅ **Yosys Successfully Installed**
@@ -269,7 +269,7 @@ yosys
 </details>
 
 <details>
-<summary>⚡ Iverilog Installation Guide</summary>
+<summary> Iverilog Installation Guide</summary>
 
 # ⚡ Iverilog Installation Guide
 
@@ -277,14 +277,14 @@ yosys
 
 **Icarus Verilog (iverilog)** is a free and open-source Verilog simulation and synthesis tool. It's perfect for:
 
-### 🌟 Key Features:
+###  Key Features:
 -  **IEEE 1364 Compliant**: Full Verilog-1995, Verilog-2001, and partial Verilog-2005 support
 -  **Fast Simulation**: Compiled simulation for better performance
 -  **Cross-Platform**: Works on Linux, macOS, and Windows
 -  **Open Source**: Completely free with GPL license
 -  **Easy Integration**: Works seamlessly with other EDA tools
 
-## 📦 Installation Steps
+##  Installation Steps
 
 ### Step 1: Update Package Repository
 
@@ -294,7 +294,7 @@ Ensure your package lists are up-to-date:
 sudo apt-get update
 ```
 
-> **📝 Note**: This step fetches the latest package information from Ubuntu repositories.
+> ** Note**: This step fetches the latest package information from Ubuntu repositories.
 
 ### Step 2: Install Iverilog
 
@@ -304,10 +304,10 @@ Install Icarus Verilog from the official Ubuntu repository:
 sudo apt-get install iverilog
 ```
 
-## 📷 Snapshot
+##  Snapshot
 <img width="1612" height="862" alt="image" src="https://github.com/user-attachments/assets/2d58e937-1ff4-44fb-86fc-df61dfad743e" />
 
-## ✅ Verification
+##  Verification
 
 ### Quick Version Check
 
@@ -329,23 +329,23 @@ Copyright 1998-2020 Stephen Williams
   (at your option) any later version.....
 ```
 
-## 📷 Snapshot
+##  Snapshot
 <img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/fb4df76b-b729-4a45-80bd-d158fc0eb3f5" />
 
-**Status**: ✅ **Icarus Verilog Successfully Installed**
+**Status**:  **Icarus Verilog Successfully Installed**
 
 </details>
 
 <details>
-<summary>🌊 GTKWave Installation Guide</summary>
+<summary> GTKWave Installation Guide</summary>
        
 # 🌊 GTKWave Installation Guide
 
-## 🎯 Overview
+##  Overview
 
 **GTKWave** is a fully featured waveform viewer for digital simulation data. Essential for debugging and analyzing your RISC-V designs!
 
-### 🌟 Key Features:
+###  Key Features:
 -  **VCD File Support**: Industry-standard Value Change Dump format
 -  **Signal Analysis**: Zoom, pan, and measure timing relationships
 -  **Customizable Views**: Color coding and signal grouping
@@ -353,7 +353,7 @@ Copyright 1998-2020 Stephen Williams
 -  **Search & Filter**: Find signals quickly in complex designs
 -  **Multi-format Support**: VCD, LXT, FST, and more
 
-## 📦 Installation Steps
+##  Installation Steps
 
 ### Step 1: Update Package Repository
 
@@ -363,7 +363,7 @@ Refresh your package database to get the latest versions:
 sudo apt-get update
 ```
 
-> **📝 Note**: This ensures you get the most recent version available in the repositories.
+> ** Note**: This ensures you get the most recent version available in the repositories.
 
 ### Step 2: Install GTKWave
 
@@ -373,7 +373,7 @@ Install GTKWave and its dependencies:
 sudo apt install gtkwave
 ```
 
-## ✅ Verification
+##  Verification
 
 ### Quick Version Check
 
@@ -391,23 +391,23 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-## 📷 Snapshot 
+##  Snapshot 
 <img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/a933469b-2946-4855-992c-afb71c6819d1" />
 
-**Status**: ✅ **GTKWave Successfully Installed**
+**Status**:  **GTKWave Successfully Installed**
 
 </details>
 
 <details>
-<summary>⚡ Ngspice Installation Guide</summary>
+<summary> Ngspice Installation Guide</summary>
 
 # ⚡ Ngspice Installation Guide
 
-## 🎯 Overview
+##  Overview
 
 **Ngspice** is a mixed-level/mixed-signal electronic circuit simulator based on Berkeley SPICE 3f5. Essential for analog and mixed-signal verification in your RISC-V design flow!
 
-### 🌟 Key Features:
+###  Key Features:
 -  **SPICE Simulation**: Industry-standard circuit simulation
 -  **Mixed-Signal**: Analog, digital, and mixed-signal support
 -  **Advanced Analysis**: AC, DC, transient, noise analysis
@@ -415,7 +415,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 -  **RISC-V Ready**: Perfect for I/O and analog verification
 -  **Open Source**: Free and actively maintained
 
-## 📦 Installation Steps
+##  Installation Steps
 
 ### Step 1: Download Ngspice Source
 
@@ -425,7 +425,7 @@ Download the latest stable release (v45.2):
 wget -O ngspice-45.2.tar.gz https://sourceforge.net/projects/ngspice/files/ng-spice-rework/45.2/ngspice-45.2.tar.gz/download
 ```
 
-> **📝 Note**: The download URL redirects from SourceForge, this is normal behavior.
+> ** Note**: The download URL redirects from SourceForge, this is normal behavior.
 
 ### Step 2: Extract the Archive
 
@@ -465,7 +465,7 @@ Configure with recommended options for RISC-V development:
 ../configure --with-x --with-readline=yes --disable-debug
 ```
 
-### 🔧 Configuration Options Explained:
+###  Configuration Options Explained:
 
 | Option | Purpose |
 |--------|---------|
@@ -505,7 +505,7 @@ WARNING: 'aclocal-1.16' is missing on your system.
 make: *** [Makefile:460: ../aclocal.m4] Error 127
 ```
 
-## 📷 Snapshot
+##  Snapshot
 <img width="1063" height="255" alt="Screenshot 2025-09-20 020639" src="https://github.com/user-attachments/assets/214d7655-9a3a-4f5e-acf5-5a9d889dd082" />
 
 ### 🔧 **Solution That Worked**
@@ -564,7 +564,7 @@ ngspice --version
 ******
 ```
 
-## 📷 Snapshot
+##  Snapshot
 <img width="1073" height="576" alt="image" src="https://github.com/user-attachments/assets/ef680304-3a8c-4b03-8ba9-44f06599c1a6" />
 
 **Status**: ✅ **Ngspice Successfully Installed**
@@ -572,11 +572,11 @@ ngspice --version
 </details>
 
 <details>
-<summary>🎩 Magic VLSI Installation Guide</summary>
+<summary> Magic VLSI Installation Guide</summary>
 
 # 🎩 Magic VLSI Installation Guide
 
-## 🎯 Overview
+##  Overview
 
 **Magic VLSI** is a venerable VLSI layout tool, written in the 1980s at Berkeley by John Ousterhout. Now maintained by Tim Edwards, it remains one of the most capable layout tools available for academic and research purposes.
 
@@ -588,7 +588,7 @@ ngspice --version
 -  **RISC-V Ready**: Perfect for custom RISC-V layouts
 -  **Open Source**: Free with extensive community support
 
-## 📦 Installation Steps
+##  Installation Steps
 
 ### Step 1: Install All Dependencies
 
@@ -662,7 +662,7 @@ magic -version
 8.3.552
 ```
 
-## 📷 Snapshot
+##  Snapshot
 <img width="1919" height="1023" alt="image" src="https://github.com/user-attachments/assets/96bc939e-a7b9-4b03-ac77-e93f3a4ef75f" />
 
 **Status**: ✅ **Magic VLSI Successfully Installed**
@@ -670,15 +670,15 @@ magic -version
 </details>
 
 <details>
-<summary>🚀 OpenLane Installation Guide</summary>
+<summary> OpenLane Installation Guide</summary>
 
 # 🚀 OpenLane Installation Guide
 
-## 🎯 Overview
+##  Overview
 
 **OpenLane** is an automated RTL to GDSII flow based on several open-source tools including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, KLayout and more. Perfect for your RISC-V Tapeout journey!
 
-### 🌟 Key Features:
+###  Key Features:
 -  **Complete Flow**: RTL synthesis to GDSII generation
 -  **Automated**: Push-button ASIC implementation
 -  **Containerized**: Easy deployment with Docker
@@ -686,7 +686,7 @@ magic -version
 -  **Open Source**: Completely free and transparent
 -  **Comprehensive**: DRC, LVS, timing analysis included
 
-## 📦 Dependency Installation
+##  Dependency Installation
 
 ```bash
 # Update system packages
@@ -700,7 +700,7 @@ sudo apt install -y build-essential python3 python3-venv python3-pip make git
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
-## 🐳 Docker Setup
+##  Docker Setup
 
 ### Step 1: Add Docker Repository
 
@@ -749,7 +749,7 @@ sudo reboot
 docker run hello-world
 ```
 
-## 📦 OpenLane Installation
+##  OpenLane Installation
 
 ### Step 1: Verify Dependencies
 
@@ -818,7 +818,7 @@ Try 'ciel --help' for help.
 Error: No such command 'ls-remotes'.
 ```
 
-### 🔧 **Solution That Worked**
+###  **Solution That Worked**
 
 **Root Cause:** `Missing argument VERSION` error occurs because the `volare enable` command needs the exact PDK commit hash from this metadata file
 
@@ -861,7 +861,7 @@ export DISPLAY=:0
 openroad -gui &
 ```
 
-## 📷 Snapshots
+##  Snapshots
 <img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/f5be9ac4-bf43-416f-8a26-512c548802f1" />
 <img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/af700c84-e605-4982-b8a7-3ae97fb268a6" />
 <img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/0d04c6cc-dd94-4c2a-a6e7-95bbc9322df2" />
@@ -872,9 +872,9 @@ openroad -gui &
 
 ---
 
-## 🏆 Installation Summary
+##  Installation Summary
 
-### ✅ Complete Toolchain Ready
+###  Complete Toolchain Ready
 
 | Tool | Version | Status | Purpose |
 |------|---------|--------|---------|
@@ -887,19 +887,19 @@ openroad -gui &
 | **OpenLane** | Latest |  Installed | RTL2GDSII Flow |
 | **SkyWater PDK** | 0fe599b2 |  Installed | 130nm Technology |
 
-### 🎯 Environment Capabilities
+###  Environment Capabilities
 
 **Complete RISC-V Design Flow Ready:**
-- ✅ **RTL Design & Verification** (Icarus Verilog + GTKWave)
-- ✅ **Logic Synthesis** (Yosys)
-- ✅ **Analog Simulation** (Ngspice)
-- ✅ **Physical Layout** (Magic VLSI)
-- ✅ **Automated RTL2GDSII** (OpenLane)
-- ✅ **Design Rule Checking** (Built-in)
-- ✅ **Layout vs Schematic** (Verification ready)
-- ✅ **Timing Analysis** (Static timing analysis)
+-  **RTL Design & Verification** (Icarus Verilog + GTKWave)
+-  **Logic Synthesis** (Yosys)
+-  **Analog Simulation** (Ngspice)
+-  **Physical Layout** (Magic VLSI)
+-  **Automated RTL2GDSII** (OpenLane)
+-  **Design Rule Checking** (Built-in)
+-  **Layout vs Schematic** (Verification ready)
+-  **Timing Analysis** (Static timing analysis)
 
-### 🚀 Ready for Next Phase
+###  Ready for Next Phase
 
 **Environment Status**: ✅ **FULLY OPERATIONAL**  
 **Next Step**: Begin Week 1 - RISC-V Processor Design  
